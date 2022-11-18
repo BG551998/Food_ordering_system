@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ADMIN_DASHBOARD</title>
+
+    <style>
+   table, th, td {
+  border:1px solid black;
+  background-color: aqua;
+}
+</style>
+
+    </style>
+  </head>
+  <body>
+    <h1>WELCOME FOOD ITEMS</h1>
+    {% csrf_token %} 
+   
+<table>
+  {% for food in mydata %}
+
+
+
+<th>FOOD NAMES</th>
+<th>Descrption</th>
+<th>Price</th>
+<th>Image</th>
+
+<tr>
+
+<td>{{ food.name }}</td>
+<td>{{ food.desc }}</td>
+<td>{{ food.price  }}</td>
+<td>{{ food.image  }}</td>
+</tr>
+
+{% endfor %}
+</table>
+
+
+<br><br>
+    <a href="{% url 'perform_logout'   %}">Logout</a>
+  </body>
+</html>
+
+
+
